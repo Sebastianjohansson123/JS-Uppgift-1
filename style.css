@@ -30,6 +30,7 @@ body {
     animation: glow 1s ease-in-out infinite alternate;
     cursor: pointer;
     opacity: 0.3s;
+    transition: 0.5s;
      /* Alternate gör så att funktionen blir bakvänd när den är färdig!! Annars så hade man behövt lägga till fler steg i keyframes! */
 }
 .h2-styling2 {
@@ -76,12 +77,55 @@ input {
     outline: none;
     font-size: 2rem;
 }
-.inputbutton {
+.inputbutton, .readybutton {
 top: 10rem;
 position: relative;
 font-weight: bold;
 color: white;
 background-color: red;
 transition: 0.5s;
+border: none;
+cursor: pointer;
+}
+.inputbutton:hover, .readybutton:hover {
+    background-color: rgb(193, 3, 3);
 }
 
+.scene2-div {
+    display: flex;
+    justify-content: center;
+}
+.readybutton {
+    height: 3rem;
+    position: relative;
+    width: 6rem;
+    top: 7rem;
+    left: 1rem;
+}
+.message {
+    position: relative;
+    top: 5rem;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    width: 40rem;
+    transition: 0.5s;
+}
+
+.axe-img {
+    transform: rotate(-48deg);
+    height: 20rem;
+    cursor: pointer;
+}
+.bazooka-img {
+    height: 15rem;
+    cursor: pointer;
+}
+.weapons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 12rem;
+    transition: 1s;
+    gap: 2rem;
+}

@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded",main);
 function main() {
     loadStartScreen();
     setAllConstants();
+    typing();
 }
 
 function setAllConstants() {
@@ -12,6 +13,11 @@ function setAllConstants() {
     const input = document.getElementById("input")
     const inputbutton = document.getElementById("inputbutton")
     const inputdiv = document.getElementById("input-div");
+    const message = document.getElementById("message")
+    const readybutton = document.getElementById("readybutton")
+    const weapons = document.getElementById("weapons")
+    const axe = document.getElementById("axe")
+    const bazooka = document.getElementById("bazooka")
 }
 let savedInput;
 
@@ -36,16 +42,41 @@ input.innerHTML = "";
 }
 
 
+let timeoutRef;
 function scene2() {
     savedInput = document.getElementById("input").value;
-    h2v2.textContent = "Welcome " + (savedInput) + "_1337_haXXor!";
+    h2v2.textContent = "Welcome " + (savedInput) + "_Haxxor_1337!";
     input.classList.add("hidden")
     inputbutton.classList.add("hidden")
     document.getElementById("input").value = "";
+    message.classList.remove("hidden")
+    message.classList.remove("display-none")
+    readybutton.classList.remove("hidden")
+    readybutton.addEventListener("click", scene3);
 }
 
+function scene3() {
+    timeoutRef = setTimeout(chooseWeapon, 1000);
+    h2v2.classList.add("hidden")
+    message.textContent = "You may now choose the weapon that you think will be the most efficient for the upcoming task"
+    readybutton.classList.add("hidden")
+}
 
+function chooseWeapon() {
+    weapons.classList.remove("hidden")
+    axe.addEventListener("click", loadAxeScene);
+    bazooka.addEventListener("click", loadBazookaScene);
+}
 
+function loadAxeScene() {
+bazooka.classList.add("hidden")
+axe.classList.add("hidden")
+timeoutRef = setTimeout(youWithAxe, 1000);
+}
 
+function loadBazookaScene() {
+    bazooka.classList.add("hidden")
+    axe.classList.add("hidden")
+    timeoutRef = setTimeout(youWithBazooka, 1000);
+}
 
-// + (savedInput) + "_1337_haXXor I hope you're ready!!!"
