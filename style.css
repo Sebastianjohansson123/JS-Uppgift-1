@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+}
+.div-body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.hidden {
+    opacity: 0;
+    transition: 0.3s;
+}
+.display-none {
+    display: none;
+}
+.before-animation {
+    position: absolute;
+    left: 200rem;
+}
+.blackbackground {
+    background-color: black;
+}
+.h2-styling, .h2-styling2 {
+    text-align: center;
+    font-size: 6rem;
+    color: white;
+    position: relative;
+    margin: 0 auto;
+    top: 5rem;
+    animation: glow 1s ease-in-out infinite alternate;
+    cursor: pointer;
+    opacity: 0.3s;
+     /* Alternate gör så att funktionen blir bakvänd när den är färdig!! Annars så hade man behövt lägga till fler steg i keyframes! */
+}
+.h2-styling2 {
+    font-size: 4rem;
+}
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px white, 0 0 5px white, 0 0 10px red, 0 0 15px red, 0 0 25px red,
+        0 0 60px red, 0 0 70px red;
+    }
+
+    to {
+      text-shadow: 0 0 15px white, 0 0 20px red, 0 0 25px red, 0 0 30px red, 0 0 35px red,
+        0 0 70px red, 0 0 80px red;
+    }
+  }
+  .hidden-from-right {
+    position: relative;
+    left: 0;
+    animation: fromright 1s;
+    animation-duration: 1s;
+    animation-iteration-count:inherit;
+  }
+  @keyframes fromright {
+    from {
+        position: relative;
+        left: 200rem;
+    }
+    to {
+        position: relative;
+        left: 0 auto
+    }
+  }
+.input-div {
+    display: flex;
+    justify-content: center;
+}
+input {
+    top: 10rem;
+    transition: 0.5s;
+    position: relative;
+    width: 20rem;
+    height: 3rem;
+    outline: none;
+    font-size: 2rem;
+}
+.inputbutton {
+top: 10rem;
+position: relative;
+font-weight: bold;
+color: white;
+background-color: red;
+transition: 0.5s;
+}
+
