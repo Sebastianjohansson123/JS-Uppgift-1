@@ -6,10 +6,6 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-.hidden {
-    opacity: 0;
-    transition: 0.3s;
-}
 .display-none {
     display: none;
 }
@@ -128,4 +124,14 @@ cursor: pointer;
     margin-top: 12rem;
     transition: 1s;
     gap: 2rem;
+}
+.streckgubbe-img {
+    position: absolute;
+    left: 5rem;
+    height: 20rem;
+}
+.hidden {
+    opacity: 0;
+    transition: 0.3s;
+    cursor:default;
 }

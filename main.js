@@ -62,6 +62,8 @@ function scene3() {
     readybutton.classList.add("hidden")
 }
 
+
+
 function chooseWeapon() {
     weapons.classList.remove("hidden")
     axe.addEventListener("click", loadAxeScene);
@@ -77,6 +79,9 @@ timeoutRef = setTimeout(youWithAxe, 1000);
 function loadBazookaScene() {
     bazooka.classList.add("hidden")
     axe.classList.add("hidden")
-    timeoutRef = setTimeout(youWithBazooka, 1000);
+    message.textContent = "Ohh The Bazooka, what a great choice! Lets get on with it!"
+    timeoutRef = setTimeout(youWithBazooka, 3000);
 }
-
+function youWithBazooka() {
+    message.textContent = "LOOK THERE HE IS!! Aim with your mouse and try to finish this fucker once and for all!"
+}
