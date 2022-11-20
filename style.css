@@ -103,7 +103,7 @@ cursor: pointer;
     color: white;
     background-color: red;
     animation: glow 1s ease-in-out infinite alternate;
-    top: 60rem;
+    bottom: 10rem;
     left: calc(50% - 15rem);
     z-index: 51;
     cursor: pointer;
@@ -154,7 +154,7 @@ cursor: pointer;
     transition: 1s;
     gap: 2rem;
 }
-.bazookagubbe-img {
+.bazookagubbe-img, .axegubbe-img {
     position: fixed;
     left: 5rem;
     height: 20rem;

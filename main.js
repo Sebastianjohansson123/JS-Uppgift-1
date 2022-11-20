@@ -52,6 +52,7 @@ function scene1() {
     inputbutton.classList.remove("hidden")
     inputbutton.addEventListener("click", scene2)
     inputbutton.addEventListener("click", clearInput)
+    h2v2.textContent = "Choose your player name:";
 }
 
 
@@ -72,6 +73,7 @@ function scene2() {
     message.classList.remove("display-none")
     readybutton.classList.remove("hidden")
     readybutton.addEventListener("click", scene3);
+    message.textContent = "We're going out on a quest, once and for all we have to defeat the monsterpig from the forests in Mölnlycke.. I suppose even you have heard of him, he's known as... Mr Nuffo!!";
 }
 
 function scene3() {
@@ -94,15 +96,29 @@ function chooseWeapon() {
 //------------------------- ALL OF THE AXE SCENE --------------------
 function loadAxeScene() {
     pig.classList.remove("display-none")
-    weapons.classList.add("hidden")
-    timeoutRef = setTimeout(youWithAxe, 1000);
+    bomb.classList.remove("display-none")
+    bazooka.classList.add("hidden")
+    axe.classList.add("hidden")
+    message.classList.add("message2");
+    message.textContent = "Ohh The Axe, what a great choice! Lets get on with it!"
+    timeoutRef = setTimeout(youWithAxe, 3000);
 }
+
+function youWithAxe() {
+    message.textContent = "LOOK THERE HE IS!! Aim with your mouse and try to finish this fucker once and for all!"
+    axegubbe.classList.remove("hidden")
+    pig.classList.remove("hidden")
+    bomb.classList.remove("hidden")
+    body.classList.add("aim")
+    pig.addEventListener("click", attackOnPig);
+    bomb.addEventListener("click", axeOnBomb);
+}
+function axeOnBomb() {
+    message.textContent = "Oh no, it seems like you didn't hit it hard enough.. LOOK OUT HERE HE COMES!!!"
+    timeoutRef = setTimeout(pigGoesBerserk, 3000);
+}
+
 //------------------------- ALL OF THE AXE SCENE --------------------
-
-
-
-
-
 
 //------------------------- ALL OF THE BAZOOKA SCENE --------------------
 function loadBazookaScene() {
@@ -120,11 +136,11 @@ function youWithBazooka() {
     pig.classList.remove("hidden")
     bomb.classList.remove("hidden")
     body.classList.add("aim")
-    pig.addEventListener("click", bazookaOnPig);
+    pig.addEventListener("click", attackOnPig);
     bomb.addEventListener("click", bazookaOnBomb);
 }
-
-function bazookaOnPig() {
+// THIS IS IF YOU SHOOT THE PIG -----------------------------------
+function attackOnPig() {
     message.textContent = "Oh no, it seems like you didn't damage him enough.. LOOK OUT HERE HE COMES!!!"
     timeoutRef = setTimeout(pigGoesBerserk, 3000);
 }
@@ -136,23 +152,62 @@ function pigGoesBerserk() {
 
 function youGotKilled() {
     bazookagubbe.classList.add("streckgubbe-animation")
+    axegubbe.classList.add("streckgubbe-animation")
     timeoutRef = setTimeout(youDiedScreen, 2000);
 }
 
 function youDiedScreen() {
+    // message.classlist.add("display-none")
     youdiedvideo.classList.remove("display-none");
     youdiedvideo.play();
     bazookagubbe.classList.add("hidden")
+    axegubbe.classList.add("hidden")
     timeoutRef = setTimeout(playAgain, 3000)
     body.classList.remove("aim")
 }
+// THIS IS IF YOU SHOOT THE PIG -----------------------------------
 
-function playAgain() {
-    playagainbutton.classList.remove("display-none")
+
+// THIS IS IF YOU SHOOT THE BARREL -----------------------------------
+function bazookaOnBomb() {
+        explosion.classList.remove("display-none");
+        explosion.play();
+        bazookagubbe.classList.add("hidden")
+        timeoutRef = setTimeout(winner, 3000)
+        body.classList.remove("aim")
+        pig.classList.add("display-none")
+        bomb.classList.add("display-none")
+        message.classList.add("hidden")
+        message.classList.add("display-none")
+
+}
+function winner() {
+    h2v2.classList.remove("hiddenheight")
+    h2v2.textContent = "YOU ROCK!!!"
+    explosion.classList.add("display-none")
+    pig.classList.add("hidden")
+    pig.classList.add("hidden")
 }
 
 
-// explosion.addEventListener('click', play(explosion);
+// THIS IS IF YOU SHOOT THE BARREL -----------------------------------
+
+function playAgain() {
+    playagainbutton.classList.remove("display-none")
+    bazookagubbe.classList.remove("streckgubbe-animation")
+    playagainbutton.addEventListener("click", restartgame);
+    
+}
+
+function restartgame() {
+    h2v2.classList.remove("hidden-height")
+    h2v2.classList.remove("hidden")
+    h2v2.classlist.remove("display-none")
+    youdievideo.classList.add("display-none")
+    h2v2.classList.toggle("hidden-from-right")
+    scene2();
+}
 
 
-//------------------------- ALL OF THE BAZOOKA SCENE --------------------
+//------------------------- END OF THE BAZOOKA SCENE --------------------
+
