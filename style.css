@@ -145,19 +145,10 @@ cursor: pointer;
     top: 30rem;
     transition: 1s;
 }
-/* .streckgubbe-animation {
-    animation: killed forwards;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+.streckgubbe-animation {
+    transform: rotate(-60deg);
+    transition: 1s;
 }
-@keyframes killed {
-    40% {
-    transform: rotate(-60deg);   
-}
-
-} */
-
 .pig {
     position: absolute;
     height: 20rem;
@@ -194,35 +185,6 @@ cursor: pointer;
     }
 }
 
-/* //////////////////////////////////////////////////////////////////////
-
-
-animation: fromright 1s glow 1s ease-in-out infinite alternate;
-animation-duration: 1s;
-animation-iteration-count:1;
-}
-@keyframes fromright {
-from {
-    position: relative;
-    left: 200rem;
-}
-to {
-    position: relative;
-    left: 0 auto
-}
-}
-
-////////////////////////////////////////////////////////////////////////// */
-
-
-
-
-
-
-
-
-
-
 .bomb {
     position: absolute;
     height: 15rem;
@@ -249,4 +211,12 @@ to {
 }
 .aim {
 cursor: crosshair;
+}
+
+
+.explosion {
+    top: 0;
+    height: 100%;
+    z-index: 50;
+    position: fixed;
 }

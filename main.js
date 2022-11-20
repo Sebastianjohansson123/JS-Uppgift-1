@@ -131,7 +131,21 @@ function bazookaOnPig() {
 
 function pigGoesBerserk() {
     pig.classList.add("piganimation")
-    bazookagubbe.classList.add("streckgubbe-animation")
+    timeoutRef = setTimeout(youGotKilled, 1200);
 }
+
+function youGotKilled() {
+    bazookagubbe.classList.add("streckgubbe-animation")
+    timeoutRef = setTimeout(youDiedScreen, 2000);
+}
+
+function youDiedScreen() {
+    explosion.classList.remove("display-none");
+    explosion.play();
+}
+
+
+// explosion.addEventListener('click', play(explosion);
+
 
 //------------------------- ALL OF THE BAZOOKA SCENE --------------------
