@@ -1,25 +1,41 @@
 window.addEventListener("DOMContentLoaded",main);
 
 function main() {
-    loadStartScreen();
     setAllConstants();
-    typing();
+    loadStartScreen();
 }
+let body
+let h2
+let h2v2
+let input;
+let inputbutton;
+let inputdiv;
+let message;
+let readybutton;
+let weapons;
+let axe;
+let bazooka;
+let savedInput;
+let timeoutRef;
+let bazookagubbe;
+// let divbody;
+
 
 function setAllConstants() {
-    const body = document.getElementById(".body")
-    const h2 = document.getElementById("h2")
-    const h2v2 = document.getElementById("h2v2")
-    const input = document.getElementById("input")
-    const inputbutton = document.getElementById("inputbutton")
-    const inputdiv = document.getElementById("input-div");
-    const message = document.getElementById("message")
-    const readybutton = document.getElementById("readybutton")
-    const weapons = document.getElementById("weapons")
-    const axe = document.getElementById("axe")
-    const bazooka = document.getElementById("bazooka")
+    body = document.getElementById("body")
+    // divbody = document.getElementById(div-body)
+    h2 = document.getElementById("h2")
+    h2v2 = document.getElementById("h2v2")
+    input = document.getElementById("input")
+    inputbutton = document.getElementById("inputbutton")
+    inputdiv = document.getElementById("input-div");
+    message = document.getElementById("message")
+    readybutton = document.getElementById("readybutton")
+    weapons = document.getElementById("weapons")
+    axe = document.getElementById("axe")
+    bazooka = document.getElementById("bazooka")
+    bazookagubbe = document.getElementById("bazookagubbe")
 }
-let savedInput;
 
 function loadStartScreen() {
     body.classList.add("blackbackground")
@@ -28,7 +44,8 @@ function loadStartScreen() {
 
 
 function scene1() {
-    h2.classList.add("hidden")
+    // h2.style.webkitAnimationPlayState= "paused";
+    h2.classList.add("hiddenheight")
     h2v2.classList.remove("before-animation")
     h2v2.classList.add("hidden-from-right")
     input.classList.remove("hidden")
@@ -37,12 +54,14 @@ function scene1() {
     inputbutton.addEventListener("click", clearInput)
 }
 
+
+
+
+
 function clearInput() {
 input.innerHTML = "";
 }
 
-
-let timeoutRef;
 function scene2() {
     savedInput = document.getElementById("input").value;
     h2v2.textContent = "Welcome " + (savedInput) + "_Haxxor_1337!";
@@ -57,31 +76,62 @@ function scene2() {
 
 function scene3() {
     timeoutRef = setTimeout(chooseWeapon, 1000);
-    h2v2.classList.add("hidden")
+    h2v2.classList.add("hiddenheight")
     message.textContent = "You may now choose the weapon that you think will be the most efficient for the upcoming task"
     readybutton.classList.add("hidden")
+    axe.classList.remove("display-none")
+    bazooka.classList.remove("display-none")
 }
 
 
 
 function chooseWeapon() {
+    message.classList.add("message-no-margin")
     weapons.classList.remove("hidden")
     axe.addEventListener("click", loadAxeScene);
     bazooka.addEventListener("click", loadBazookaScene);
 }
-
+//------------------------- ALL OF THE AXE SCENE --------------------
 function loadAxeScene() {
-bazooka.classList.add("hidden")
-axe.classList.add("hidden")
-timeoutRef = setTimeout(youWithAxe, 1000);
+    pig.classList.remove("display-none")
+    weapons.classList.add("hidden")
+    timeoutRef = setTimeout(youWithAxe, 1000);
 }
+//------------------------- ALL OF THE AXE SCENE --------------------
 
+
+
+
+
+
+//------------------------- ALL OF THE BAZOOKA SCENE --------------------
 function loadBazookaScene() {
+    pig.classList.remove("display-none")
+    bomb.classList.remove("display-none")
     bazooka.classList.add("hidden")
     axe.classList.add("hidden")
+    message.classList.add("message2");
     message.textContent = "Ohh The Bazooka, what a great choice! Lets get on with it!"
     timeoutRef = setTimeout(youWithBazooka, 3000);
 }
 function youWithBazooka() {
     message.textContent = "LOOK THERE HE IS!! Aim with your mouse and try to finish this fucker once and for all!"
+    bazookagubbe.classList.remove("hidden")
+    pig.classList.remove("hidden")
+    bomb.classList.remove("hidden")
+    body.classList.add("aim")
+    pig.addEventListener("click", bazookaOnPig);
+    bomb.addEventListener("click", bazookaOnBomb);
 }
+
+function bazookaOnPig() {
+    message.textContent = "Oh no, it seems like you didn't damage him enough.. LOOK OUT HERE HE COMES!!!"
+    timeoutRef = setTimeout(pigGoesBerserk, 3000);
+}
+
+function pigGoesBerserk() {
+    pig.classList.add("piganimation")
+    bazookagubbe.classList.add("streckgubbe-animation")
+}
+
+//------------------------- ALL OF THE BAZOOKA SCENE --------------------
