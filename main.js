@@ -140,8 +140,15 @@ function youGotKilled() {
 }
 
 function youDiedScreen() {
-    explosion.classList.remove("display-none");
-    explosion.play();
+    youdiedvideo.classList.remove("display-none");
+    youdiedvideo.play();
+    bazookagubbe.classList.add("hidden")
+    timeoutRef = setTimeout(playAgain, 3000)
+    body.classList.remove("aim")
+}
+
+function playAgain() {
+    playagainbutton.classList.remove("display-none")
 }
 
 
