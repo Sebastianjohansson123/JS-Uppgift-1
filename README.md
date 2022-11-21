@@ -1,3 +1,7 @@
-#Javascript arbete av Sebastian Johansson "Game of d00m"
+#Game of d00m, a Javascript project by Sebastian Johansson.
 
-[Länk till spel](https://sebastianjohansson123.github.io/JS-Uppgift-1/)
+[Click here to try the game](https://sebastianjohansson123.github.io/JS-Uppgift-1/)
+
+This is a text and image based game where you can either kill the pig
+ or loose and die depending on your choices leading up to the battle.
+
