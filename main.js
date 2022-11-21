@@ -42,7 +42,7 @@ function loadStartScreen() {
     h2.addEventListener("click", scene1);
 }
 
-
+// This removes the start button and loads scene nr 1.
 function scene1() {
     h2.classList.add("hiddenheight")
     h2v2.classList.remove("before-animation")
@@ -55,13 +55,11 @@ function scene1() {
 }
 
 
-
-
-
 function clearInput() {
 input.innerHTML = "";
 }
 
+//This takes the name that u choosed (savedInput) and welcomes u, then shows you the quest.
 function scene2() {
     savedInput = document.getElementById("input").value;
     h2v2.textContent = "Welcome " + (savedInput) + "_Haxxor_1337!";
@@ -75,6 +73,7 @@ function scene2() {
     message.textContent = "We're going out on a quest, once and for all we have to defeat the monsterpig from the forests in Mölnlycke.. I suppose even you have heard of him, he's known as... Mr Nuffo!!";
 }
 
+// this removes the h2 that welcomes you and loads the choose weapon page.
 function scene3() {
     timeoutRef = setTimeout(chooseWeapon, 1000);
     h2v2.classList.add("hiddenheight")
@@ -84,8 +83,7 @@ function scene3() {
     bazooka.classList.remove("display-none")
 }
 
-
-
+//This function shows the weapons and adds a click function to both of them.
 function chooseWeapon() {
     message.classList.add("message-no-margin")
     weapons.classList.remove("hidden")
@@ -116,7 +114,7 @@ function axeOnBomb() {
     timeoutRef = setTimeout(pigGoesBerserk, 3000);
 }
 
-//------------------------- ALL OF THE AXE SCENE --------------------
+//------------------------- END OF THE AXE SCENE --------------------
 
 //------------------------- ALL OF THE BAZOOKA SCENE --------------------
 function loadBazookaScene() {
@@ -136,20 +134,23 @@ function youWithBazooka() {
     pig.addEventListener("click", attackOnPig);
     bomb.addEventListener("click", bazookaOnBomb);
 }
-// THIS IS IF YOU SHOOT THE PIG -----------------------------------
+// this is if you shoot the pig -----------------------------------
 function attackOnPig() {
     message.textContent = "Oh no, it seems like you didn't damage him enough.. LOOK OUT HERE HE COMES!!!"
     timeoutRef = setTimeout(pigGoesBerserk, 3000);
 }
+//this is the pig animation
 function pigGoesBerserk() {
     pig.classList.add("piganimation")
     timeoutRef = setTimeout(youGotKilled, 1200);
 }
+//this is the guy falling over animation
 function youGotKilled() {
     bazookagubbe.classList.add("streckgubbe-animation")
     axegubbe.classList.add("streckgubbe-animation")
     timeoutRef = setTimeout(youDiedScreen, 2000);
 }
+// this is the you died screen
 function youDiedScreen() {
     // message.classlist.add("display-none")
     youdiedvideo.classList.remove("display-none");
@@ -159,7 +160,7 @@ function youDiedScreen() {
     timeoutRef = setTimeout(playAgain, 3000)
     body.classList.remove("aim")
 }
-// THIS IS IF YOU SHOOT THE PIG -----------------------------------
+// END OF SHOOT THE PIG SCENE -----------------------------------
 
 
 
@@ -190,26 +191,11 @@ function playAgain() {
     playagainbutton.classList.remove("display-none");
     bazookagubbe.classList.remove("streckgubbe-animation");
 }
-
+//this function is reloading the page 
 function restartGame() {
-    // weapons.classList.add("display-none")
-    // weapons.classList.add("hidden")
-    // axe.classList.add("display-none")
-    // axe.classList.add("hidden")
-    // bazooka.classList.add("display-none")
-    // bazooka.classList.add("hidden")
-    // message.classList.remove("message-no-margin")
-    // message.classList.remove("message")
-    // message.classList.remove("hidden")
-    // h2v2.classList.remove("hiddenheight")
-    // h2v2.classList.remove("hidden")
-    // h2v2.classList.remove("display-none")
-    // scene2();
     window.location.reload();
 
     
 }
-
-
 //------------------------- END OF THE BAZOOKA SCENE --------------------
 
