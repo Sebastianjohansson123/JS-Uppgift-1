@@ -23,7 +23,6 @@ let bazookagubbe;
 
 function setAllConstants() {
     body = document.getElementById("body")
-    // divbody = document.getElementById(div-body)
     h2 = document.getElementById("h2")
     h2v2 = document.getElementById("h2v2")
     input = document.getElementById("input")
@@ -50,14 +49,10 @@ function scene1() {
     input.classList.remove("hidden")
     inputbutton.classList.remove("hidden")
     inputbutton.addEventListener("click", scene2)
-    inputbutton.addEventListener("click", clearInput)
     h2v2.textContent = "Choose your player name:";
 }
 
 
-function clearInput() {
-input.innerHTML = "";
-}
 
 //This takes the name that u choosed (savedInput) and welcomes u, then shows you the quest.
 function scene2() {
@@ -72,6 +67,7 @@ function scene2() {
     readybutton.addEventListener("click", scene3);
     message.textContent = "We're going out on a quest, once and for all we have to defeat the monsterpig from the forests in Mölnlycke.. I suppose even you have heard of him, he's known as... Mr Nuffo!!";
 }
+
 
 // this removes the h2 that welcomes you and loads the choose weapon page.
 function scene3() {
