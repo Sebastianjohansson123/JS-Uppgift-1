@@ -13,9 +13,10 @@ body {
     position: fixed;
     left: 200rem;
 }
-.blackbackground {
-    background-color: black;
-}
+
+
+
+
 .h2-styling {
     text-align: center;
     font-size: 6rem;
@@ -236,4 +237,8 @@ cursor: crosshair;
     width: 100%;
     z-index: 50;
     position: fixed;
+}
+
+.blackbackground {
+    background-color: black;
 }

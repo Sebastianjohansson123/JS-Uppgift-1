@@ -18,7 +18,7 @@ let bazooka;
 let savedInput;
 let timeoutRef;
 let bazookagubbe;
-// let divbody;
+
 
 
 function setAllConstants() {
@@ -44,7 +44,6 @@ function loadStartScreen() {
 
 
 function scene1() {
-    // h2.style.webkitAnimationPlayState= "paused";
     h2.classList.add("hiddenheight")
     h2v2.classList.remove("before-animation")
     h2v2.classList.add("hidden-from-right")
@@ -99,7 +98,6 @@ function loadAxeScene() {
     bomb.classList.remove("display-none")
     bazooka.classList.add("hidden")
     axe.classList.add("hidden")
-    message.classList.add("message2");
     message.textContent = "Ohh The Axe, what a great choice! Lets get on with it!"
     timeoutRef = setTimeout(youWithAxe, 3000);
 }
@@ -126,7 +124,6 @@ function loadBazookaScene() {
     bomb.classList.remove("display-none")
     bazooka.classList.add("hidden")
     axe.classList.add("hidden")
-    message.classList.add("message2");
     message.textContent = "Ohh The Bazooka, what a great choice! Lets get on with it!"
     timeoutRef = setTimeout(youWithBazooka, 3000);
 }
@@ -144,18 +141,15 @@ function attackOnPig() {
     message.textContent = "Oh no, it seems like you didn't damage him enough.. LOOK OUT HERE HE COMES!!!"
     timeoutRef = setTimeout(pigGoesBerserk, 3000);
 }
-
 function pigGoesBerserk() {
     pig.classList.add("piganimation")
     timeoutRef = setTimeout(youGotKilled, 1200);
 }
-
 function youGotKilled() {
     bazookagubbe.classList.add("streckgubbe-animation")
     axegubbe.classList.add("streckgubbe-animation")
     timeoutRef = setTimeout(youDiedScreen, 2000);
 }
-
 function youDiedScreen() {
     // message.classlist.add("display-none")
     youdiedvideo.classList.remove("display-none");
@@ -166,6 +160,7 @@ function youDiedScreen() {
     body.classList.remove("aim")
 }
 // THIS IS IF YOU SHOOT THE PIG -----------------------------------
+
 
 
 // THIS IS IF YOU SHOOT THE BARREL -----------------------------------
@@ -188,24 +183,31 @@ function winner() {
     pig.classList.add("hidden")
     pig.classList.add("hidden")
 }
-
-
 // THIS IS IF YOU SHOOT THE BARREL -----------------------------------
 
 function playAgain() {
-    playagainbutton.classList.remove("display-none")
-    bazookagubbe.classList.remove("streckgubbe-animation")
-    playagainbutton.addEventListener("click", restartgame);
-    
+    playagainbutton.addEventListener("click", restartGame);
+    playagainbutton.classList.remove("display-none");
+    bazookagubbe.classList.remove("streckgubbe-animation");
 }
 
-function restartgame() {
-    h2v2.classList.remove("hidden-height")
-    h2v2.classList.remove("hidden")
-    h2v2.classlist.remove("display-none")
-    youdievideo.classList.add("display-none")
-    h2v2.classList.toggle("hidden-from-right")
-    scene2();
+function restartGame() {
+    // weapons.classList.add("display-none")
+    // weapons.classList.add("hidden")
+    // axe.classList.add("display-none")
+    // axe.classList.add("hidden")
+    // bazooka.classList.add("display-none")
+    // bazooka.classList.add("hidden")
+    // message.classList.remove("message-no-margin")
+    // message.classList.remove("message")
+    // message.classList.remove("hidden")
+    // h2v2.classList.remove("hiddenheight")
+    // h2v2.classList.remove("hidden")
+    // h2v2.classList.remove("display-none")
+    // scene2();
+    window.location.reload();
+
+    
 }
 
 
